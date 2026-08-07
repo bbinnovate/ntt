@@ -1,5 +1,5 @@
-import { LegacyPage } from '@/components/LegacyPage';
+import { LegacySite } from '@/components/LegacySite';
 
 export default function HomePage() {
-  return <LegacyPage source="/legacy/home" title="NAVNEET TOPTECH" />;
+  return <LegacySite sourceFile="NTT_Website_Complete_3.html" activePage="home" />;
 }

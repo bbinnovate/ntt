@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss/utilities";
 
 @theme {
   --color-brand-blue: #0A4B9B;
@@ -27,6 +28,8 @@
   --spacing-page: 2.5rem;
 }
 
+
+
 /* Global semantic font hooks requested for reusable project-wide typography. */
 .heading { font-family: var(--font-heading); }
 .title { font-family: var(--font-title); }
@@ -35,3 +38,49 @@
 
 html, body { min-height: 100%; }
 body { margin: 0; }
+
+/* Responsive adaptations for the supplied desktop prototype. */
+@media (max-width: 1024px) {
+  .hero, .benefit-row { gap: 2rem !important; }
+  .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  footer > div:first-child { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 720px) {
+  html, body { overflow-x: hidden; }
+  nav { height: auto !important; min-height: 60px; padding: .5rem 1rem !important; flex-wrap: wrap; gap: .5rem; }
+  .nav-logo, .nav-logo img { height: 36px !important; }
+  .nav-links { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links > li > a, .nav-links > li > span { height: 40px !important; padding: 0 10px !important; white-space: nowrap; }
+  .dropdown { position: fixed !important; top: auto !important; left: 0 !important; right: 0 !important; min-width: 0 !important; }
+  .nav-sup { display: none; }
+  .nav-cta { padding: 9px 14px !important; font-size: 12px !important; }
+  .hero, .g2, .g2-1, .benefit-row, .form-row { grid-template-columns: minmax(0, 1fr) !important; }
+  .benefit-row.flip { direction: ltr !important; }
+  .hero, .page-hero, .sec, .ai-section, .cta-strip { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .hero { padding-top: 3.5rem !important; padding-bottom: 3rem !important; min-height: 0 !important; }
+  .sec, .ai-section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  .hero h1 { font-size: clamp(30px, 9vw, 40px) !important; }
+  .page-hero h1, .sec-title { font-size: clamp(27px, 8vw, 36px) !important; }
+  .g3, .g4, [style*="grid-template-columns:repeat(2,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: minmax(0, 1fr) !important; }
+  .stats-bar { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .stat-item:nth-child(2) { border-right: none !important; }
+  .sec-hrow { align-items: flex-start !important; flex-direction: column; margin-bottom: 1.75rem !important; }
+  .breadcrumb { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  footer > div:first-child { grid-template-columns: minmax(0, 1fr) !important; gap: 1.75rem !important; padding: 2.5rem 1.25rem 0 !important; }
+  footer > div:last-child { padding: 1.25rem !important; align-items: flex-start !important; flex-direction: column; }
+  [style*="padding:52px 2.5rem 0"] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  [style*="padding:20px 2.5rem"] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .form-box { padding: 1.25rem !important; }
+  .cur-tabs { flex-wrap: nowrap !important; overflow-x: auto; padding-bottom: .25rem; }
+  .cur-tab { white-space: nowrap; }
+  .cur-table { min-width: 620px; }
+  .cur-panel { overflow-x: auto; }
+  .cta-btns, .hero-btns { align-items: stretch; }
+  .cta-btns > button, .hero-btns > button { width: 100%; justify-content: center; }
+}

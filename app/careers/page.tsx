@@ -1,5 +1,5 @@
-import { LegacyPage } from '@/components/LegacyPage';
+import { LegacySite } from '@/components/LegacySite';
 
 export default function CareersPage() {
-  return <LegacyPage source="/legacy/careers" title="Careers" />;
+  return <LegacySite sourceFile="NTT_Careers_Page.html" activePage="careers" />;
 }

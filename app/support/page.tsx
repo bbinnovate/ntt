@@ -1,5 +1,5 @@
-import { LegacyPage } from '@/components/LegacyPage';
+import { LegacySite } from '@/components/LegacySite';
 
 export default function SupportPage() {
-  return <LegacyPage source="/legacy/support" title="Support & Services" />;
+  return <LegacySite sourceFile="NTT_Support_Page.html" activePage="support" />;
 }

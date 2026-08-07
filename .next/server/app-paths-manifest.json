@@ -1,4 +1,6 @@
 {
-  "/legacy/[page]/route": "app/legacy/[page]/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/[page]/page": "app/[page]/page.js",
+  "/support/page": "app/support/page.js",
+  "/conclaves/page": "app/conclaves/page.js"
 }

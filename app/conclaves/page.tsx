@@ -1,5 +1,5 @@
-import { LegacyPage } from '@/components/LegacyPage';
+import { LegacySite } from '@/components/LegacySite';
 
 export default function ConclavesPage() {
-  return <LegacyPage source="/legacy/conclaves" title="NTT Conclaves" />;
+  return <LegacySite sourceFile="NTT_Conclaves_Page.html" activePage="conclaves" />;
 }

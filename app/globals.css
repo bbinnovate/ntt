@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0A4B9B;
+  --color-brand-indigo: #2e3191;
+  --color-brand-violet: #3a3eb8;
+  --color-brand-green: #1b8a73;
+  --color-brand-emerald: #03ad7e;
+  --color-brand-deep-green: #0f5e50;
+  --color-brand-teal: #008aa4;
+  --color-brand-gold: #1b8a73;
+  --color-brand-ink: #12154a;
+  --color-brand-muted: #5a5f8a;
+  --color-brand-light: #eef0fa;
+  --color-brand-off: #f7f8fd;
+  --color-brand-border: #d4d7ef;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
+  --font-subtitle: 'Inter', sans-serif;
+  --font-extra: 'Inter', sans-serif;
+  --radius-brand: 14px;
+  --radius-card: 16px;
+  --radius-button: 8px;
+  --shadow-brand: 0 8px 32px rgba(46,49,145,.1);
+  --shadow-nav: 0 2px 20px rgba(46,49,145,.08);
+  --spacing-section: 72px;
+  --spacing-page: 2.5rem;
+}
+
+/* Global semantic font hooks requested for reusable project-wide typography. */
+.heading { font-family: var(--font-heading); }
+.title { font-family: var(--font-title); }
+.subtitle { font-family: var(--font-subtitle); }
+.extraFont { font-family: var(--font-extra); }
+
+html, body { min-height: 100%; }
+body { margin: 0; }

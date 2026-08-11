@@ -8,7 +8,11 @@ export async function loadLegacySource(fileName: string, activePage = 'home'): P
   const html = await readFile(join(process.cwd(), fileName), 'utf8');
   const styles = Array.from(html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi))
     .map((match) => match[1])
-    .join('\n');
+    .join('\n')
+    // Keep the supplied visual rules while routing the legacy type tokens through
+    // the one global application font. The original HTML files remain untouched.
+    .replace(/--fh:'Montserrat',sans-serif;\s*--fb:'Inter',sans-serif;/g, '--fh:var(--font-global); --fb:var(--font-global);')
+    .replace(/font-family:(?:var\(--fh\)|var\(--fb\)|'Montserrat',sans-serif|Georgia,serif)/g, 'font-family:var(--font-global)');
   const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? '';
   const pageAwareBody = body.replace(
     /(<div\s+id=["']page-)([^"']+)(["']\s+class=["']page)(?:\s+active)?(["'])/gi,

@@ -2,7 +2,7 @@
   !*** css ../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
 /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @layer properties;
 .invisible {
   visibility: hidden;
@@ -61,35 +61,100 @@
   transition-duration: var(--tw-duration, 0s);
 }
 :root, :host {
-  --font-heading: 'Montserrat', sans-serif;
-  --font-title: 'Montserrat', sans-serif;
-  --font-subtitle: 'Inter', sans-serif;
-  --font-extra: 'Inter', sans-serif;
+  --font-global: 'Montserrat', sans-serif;
+  --font-heading: var(--font-global);
+  --font-title: var(--font-global);
+  --font-subtitle: var(--font-global);
+  --font-extra: var(--font-global);
+  --heading: 60px;
+  --subtitle: 16px;
+  --extraFont: 20px;
 }
 .heading {
   font-family: var(--font-heading);
+  font-size: var(--heading);
+  line-height: 1.2em;
+  text-transform: capitalize;
 }
 .title {
   font-family: var(--font-title);
+  font-size: var(--heading);
+  font-weight: 400;
+  line-height: 1.2em;
 }
 .subtitle {
   font-family: var(--font-subtitle);
+  font-size: var(--subtitle);
+  font-weight: 400;
+  line-height: 1.4em;
 }
 .extraFont {
   font-family: var(--font-extra);
+  font-size: var(--extraFont);
+  line-height: 1.2em;
 }
 html, body {
   min-height: 100%;
 }
 body {
   margin: 0;
+  font-family: var(--font-global);
+}
+:root {
+  --fh: var(--font-global) !important;
+  --fb: var(--font-global) !important;
+}
+body, body * {
+  font-family: var(--font-global) !important;
+}
+main, .page, section, .hero > *, .g2 > *, .g2-1 > *, .g3 > *, .g4 > *,
+.benefit-row > *, .vgrid > *, .s-inner > *, .form-row > * {
+  min-width: 0;
+}
+img, svg, video, canvas {
+  max-width: 100%;
+}
+img, video {
+  height: auto;
+}
+button, input, select, textarea {
+  max-width: 100%;
 }
 @media (max-width: 1024px) {
+  nav {
+    height: auto !important;
+    min-height: 68px;
+    padding: .5rem 1.5rem !important;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+  }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-links > li > a, .nav-links > li > span {
+    height: 42px !important;
+    white-space: nowrap;
+  }
+  .dropdown {
+    top: 42px !important;
+  }
   .hero, .benefit-row {
     gap: 2rem !important;
   }
-  .g3, .g4 {
+  .g3, .g4, .vgrid, .ifp-feat-grid, .platform-feat-grid, .blog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .impact-bar, .stats-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .impact-item:nth-child(even), .stat-item:nth-child(even) {
+    border-right: none !important;
   }
   [style*="grid-template-columns:repeat(3,1fr)"],
   [style*="grid-template-columns:repeat(4,1fr)"] {
@@ -101,7 +166,7 @@ body {
 }
 @media (max-width: 720px) {
   html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   nav {
     height: auto !important;
@@ -128,11 +193,11 @@ body {
     white-space: nowrap;
   }
   .dropdown {
-    position: fixed !important;
-    top: auto !important;
+    position: absolute !important;
+    top: 40px !important;
     left: 0 !important;
-    right: 0 !important;
-    min-width: 0 !important;
+    right: auto !important;
+    min-width: 200px !important;
   }
   .nav-sup {
     display: none;
@@ -141,7 +206,8 @@ body {
     padding: 9px 14px !important;
     font-size: 12px !important;
   }
-  .hero, .g2, .g2-1, .benefit-row, .form-row {
+  .hero, .g2, .g2-1, .benefit-row, .form-row, .vgrid, .ifp-feat-grid,
+  .platform-feat-grid, .blog-grid, .s-inner, .pillars-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
   .benefit-row.flip {
@@ -166,13 +232,18 @@ body {
   .page-hero h1, .sec-title {
     font-size: clamp(27px, 8vw, 36px) !important;
   }
-  .g3, .g4, [style*="grid-template-columns:repeat(2,1fr)"],
+  .g3, .g4, [style*="grid-template-columns"],
   [style*="grid-template-columns:repeat(3,1fr)"],
   [style*="grid-template-columns:repeat(4,1fr)"] {
     grid-template-columns: minmax(0, 1fr) !important;
   }
   .stats-bar {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .impact-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
   .stat-item:nth-child(2) {
     border-right: none !important;
@@ -212,6 +283,13 @@ body {
     overflow-x: auto;
     padding-bottom: .25rem;
   }
+  .s-tabs {
+    overflow-x: auto;
+    padding-bottom: .25rem;
+  }
+  .s-tab {
+    white-space: nowrap;
+  }
   .cur-tab {
     white-space: nowrap;
   }
@@ -227,6 +305,34 @@ body {
   .cta-btns > button, .hero-btns > button {
     width: 100%;
     justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .hero, .page-hero, .sec, .ai-section, .ifp-section, .cta-strip {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .hero {
+    gap: 1.5rem !important;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 9vw, 36px) !important;
+  }
+  .page-hero h1, .sec-title {
+    font-size: clamp(25px, 8vw, 32px) !important;
+  }
+  .page-hero-tag, .hero-eyebrow {
+    white-space: normal;
+  }
+  .stats-bar, .impact-bar {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .stat-item, .impact-item {
+    border-right: none !important;
+  }
+  .btn-gold, .btn-blue, .btn-green, .btn-wh, .btn-ghost, .btn-wh-outline {
+    max-width: 100%;
+    white-space: normal;
   }
 }
 @property --tw-rotate-x {

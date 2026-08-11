@@ -369,6 +369,18 @@ nav > .nav-mobile-menu,
   }
 }
 @media (max-width: 480px) {
+  .hero + .stats-bar {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .hero + .stats-bar .stat-item {
+    min-width: 0;
+    padding: 18px .25rem;
+  }
+  .hero + .stats-bar .stat-num {
+    font-size: clamp(20px, 6.5vw, 26px);
+    white-space: nowrap;
+  }
   .hero,
   .page-hero,
   .sec,

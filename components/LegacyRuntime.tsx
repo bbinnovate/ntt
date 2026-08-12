@@ -181,6 +181,9 @@ export function LegacyRuntime() {
     };
     const homeFooter = document.querySelector<HTMLElement>('#home-footer');
     if (homeFooter) homeFooter.outerHTML = footerTemplate();
+    document.querySelectorAll<HTMLElement>('.page.active').forEach((page) => {
+      if (!page.querySelector('footer')) page.insertAdjacentHTML('beforeend', footerTemplate());
+    });
     setupMobileNavigation();
     setupMobileFooter();
     setupHeroStatsCounters();

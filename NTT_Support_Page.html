@@ -419,6 +419,161 @@ footer{background:#0A4B9B;padding:52px 2.5rem 28px}
 </head>
 <body>
 
+   <!-- NAV -->
+    <nav>
+      <div class="nav-logo" onclick="goPage('home')">
+        <svg
+          width="180"
+          height="44"
+          viewBox="0 0 360 88"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <text
+            x="0"
+            y="32"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="28"
+            fill="#2e3191"
+          >
+            nav
+          </text>
+          <text
+            x="62"
+            y="32"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="28"
+            fill="#2e3191"
+          >
+            N
+          </text>
+          <text
+            x="84"
+            y="32"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="22"
+            fill="#2e3191"
+          >
+            EET
+          </text>
+          <text
+            x="0"
+            y="75"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="42"
+            fill="#2e3191"
+          >
+            T
+          </text>
+          <circle
+            cx="42"
+            cy="55"
+            r="22"
+            fill="none"
+            stroke="#2e3191"
+            stroke-width="2"
+          />
+          <circle cx="42" cy="55" r="22" fill="url(#globeGrad)" opacity="0.9" />
+          <defs>
+            <radialGradient id="globeGrad" cx="40%" cy="40%">
+              <stop offset="0%" stop-color="#2e3191" />
+              <stop offset="100%" stop-color="#1b8a73" />
+            </radialGradient>
+          </defs>
+          <text
+            x="68"
+            y="75"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="42"
+            fill="#2e3191"
+          >
+            P
+          </text>
+          <text
+            x="113"
+            y="75"
+            font-family="Montserrat,sans-serif"
+            font-weight="800"
+            font-size="42"
+            fill="#1b8a73"
+          >
+            TECH
+          </text>
+        </svg>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <span>About Us ▾</span>
+          <div class="dropdown">
+            <a onclick="goPage('about')">About NTT</a>
+            <a
+              onclick="window.open('https://navneet.com')"
+              rel="noopener noreferrer"
+              >About NEL ↗</a
+            >
+            <a onclick="goPage('news')">Awards</a>
+          </div>
+        </li>
+        <li>
+          <span>Our Products ▾</span>
+          <div class="dropdown">
+            <a onclick="goPage('topschool')">TopSchool LMS</a>
+            <a
+              onclick="goPage('topseries')"
+              style="padding-left: 32px; font-size: 12px; color: var(--muted)"
+              >↳ TopSeries</a
+            >
+            <a onclick="goPage('topclass')">TopClass</a>
+            <a onclick="goPage('topassess')">TopAssess</a>
+            <a onclick="goPage('ifp')">Hardware & IFP</a>
+          </div>
+        </li>
+        <li>
+          <span>Events ▾</span>
+          <div class="dropdown">
+            <a onclick="goPage('conclaves')">Conclaves</a>
+            <a onclick="goPage('conclaves')">Expos</a>
+            <a onclick="goPage('conclaves')">Contests</a>
+          </div>
+        </li>
+        <li>
+          <span>Blogs ▾</span>
+          <div class="dropdown">
+            <a onclick="goPage('news')">In the News</a>
+            <a onclick="goPage('blogs')">Blogs</a>
+          </div>
+        </li>
+        <li>
+          <span>Contact ▾</span>
+          <div class="dropdown">
+            <a onclick="goPage('contact')">Contact Us</a>
+            <a onclick="goPage('careers')">Careers</a>
+            <a onclick="goPage('support')">Support & Services</a>
+          </div>
+        </li>
+        <li>
+          <a
+            onclick="window.open('http://nityatraining.com')"
+            rel="noopener noreferrer"
+            style="color: var(--green); font-weight: 700"
+            >Nitya Training ↗</a
+          >
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a class="nav-sup" href="https://navneetfoundation.in" target="_blank"
+          >Support a Child ↗</a
+        >
+        <button class="nav-cta" onclick="goPage('contact')">
+          Book a Free Demo
+        </button>
+      </div>
+    </nav>
+
 <div id="page-support" class="page active">
   <div class="breadcrumb"><a onclick="goPage('home')">Home</a><span>/</span><span>Support & Services</span></div>
   <div class="page-hero">
@@ -463,7 +618,533 @@ footer{background:#0A4B9B;padding:52px 2.5rem 28px}
   </section>
 </div>
 
+ <!-- ═══ SHARED FOOTER TEMPLATE ═══ -->
+    <template id="footer-tpl">
+      <footer style="background: #061e3e">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            padding: 12px 1.9rem 0;
+          "
+         >
+          <!-- BRAND COL -->
+          <div>
+            <div class="footer-logo-wrap">
+              <svg
+                width="180"
+                height="44"
+                viewBox="0 0 360 88"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <text
+                  x="0"
+                  y="32"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="26"
+                  fill="white"
+                >
+                  nav
+                </text>
+                <text
+                  x="58"
+                  y="32"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="26"
+                  fill="white"
+                >
+                  N
+                </text>
+                <text
+                  x="79"
+                  y="32"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="21"
+                  fill="white"
+                >
+                  EET
+                </text>
+                <text
+                  x="0"
+                  y="74"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="40"
+                  fill="white"
+                >
+                  T
+                </text>
+                <circle cx="40" cy="55" r="20" fill="#0F9BD7" />
+                <text
+                  x="64"
+                  y="74"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="40"
+                  fill="white"
+                >
+                  P
+                </text>
+                <text
+                  x="107"
+                  y="74"
+                  font-family="Montserrat,sans-serif"
+                  font-weight="800"
+                  font-size="40"
+                  fill="#0F9BD7"
+                >
+                  TECH
+                </text>
+              </svg>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.72);
+                font-size: 13px;
+                line-height: 1.72;
+                margin-top: 12px;
+                max-width: 280px;
+              "
+            >
+              India's School Transformation Partner — the EdTech arm of
+              <span style="color: #0f9bd7; font-weight: 700"
+                >Navneet Education Limited</span
+              >. Combining 65+ years of educational expertise with technology
+              built for Indian classrooms.
+            </p>
+            <div class="socials" style="margin-top: 16px">
+              <div class="sdot">Fb</div>
+              <div class="sdot">Tw</div>
+              <div class="sdot">Yt</div>
+              <div class="sdot">Ig</div>
+              <div class="sdot">Li</div>
+            </div>
+            <div
+    class="mobile-no-border"
+    style="
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    "
+>
+              <div class="products-label"
+                style="
+                  font-size: 10px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 1.2px;
+                  color: #0f9bd7;
+                  margin-bottom: 10px;
+                  font-family: var(--fh);
+                "
+              >
+                Contact
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: rgba(255, 255, 255, 0.85);
+                  margin-bottom: 6px;
+                "
+              >
+                📞 1800 266 6676 (Toll Free)
+              </div>
+              <div style="font-size: 13px; color: rgba(255, 255, 255, 0.85)">
+                ✉️ info@navneettoptech.com
+              </div>
+            </div>
+          </div>
 
+          <!-- PRODUCTS -->
+          <div>
+            <div  class="products-label"
+              style="
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+                color: #0f9bd7;
+                margin-bottom: 16px;
+                font-family: var(--fh);
+              "
+            >
+              Products
+            </div>
+            <a
+              onclick="goPage('topschool')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >TopSchool LMS</a
+            >
+            <a
+              onclick="goPage('topseries')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.65);
+                font-size: 12px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                padding-left: 0.85rem;
+              "
+              >↳ TopSeries</a
+            >
+            <a
+              onclick="goPage('topclass')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >TopClass</a
+            >
+            <a
+              onclick="goPage('topassess')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >TopAssess</a
+            >
+            <a
+              onclick="goPage('ifp')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Hardware & IFP</a
+            >
+            <a
+              onclick="window.open('http://nityatraining.com')"
+              rel="noopener noreferrer"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Nitya Training ↗</a
+            >
+            <a
+              onclick="window.open('http://navneetedu.ai')"
+              rel="noopener noreferrer"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Navneet AI ↗</a
+            >
+          </div>
+
+          <!-- COMPANY -->
+          <div>
+            <div class="products-label"
+              style="
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+                color: #0f9bd7;
+                margin-bottom: 16px;
+                font-family: var(--fh);
+              "
+            >
+              Company
+            </div>
+            <a
+              onclick="goPage('about')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >About NTT</a
+            >
+            <a
+              onclick="window.open('https://navneet.com')"
+              rel="noopener noreferrer"
+              style="
+                display: block;
+                color: #0f9bd7;
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 600;
+              "
+              >About NEL ↗</a
+            >
+            <a
+              onclick="goPage('news')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Awards & News</a
+            >
+            <a
+              onclick="goPage('conclaves')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Events</a
+            >
+            <a
+              onclick="goPage('careers')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Careers</a
+            >
+            <a
+              onclick="goPage('blogs')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Blogs</a
+            >
+          </div>
+
+          <!-- EVENTS -->
+          <div>
+            <div class="products-label"
+              style="
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+                color: #0f9bd7;
+                margin-bottom: 16px;
+                font-family: var(--fh);
+              "
+            >
+              Events
+            </div>
+            <a
+              onclick="goPage('conclaves')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Conclaves</a
+            >
+            <a
+              onclick="goPage('conclaves')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Expos</a
+            >
+            <a
+              onclick="goPage('conclaves')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Contests</a
+            >
+            <a
+              onclick="goPage('news')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >In the News</a
+            >
+          </div>
+
+          <!-- SUPPORT -->
+          <div>
+            <div class="products-label"
+              style="
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+                color: #0f9bd7;
+                margin-bottom: 16px;
+                font-family: var(--fh);
+              "
+            >
+              Support
+            </div>
+            <a
+              onclick="goPage('contact')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Contact Us</a
+            >
+            <a
+              onclick="goPage('support')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Support & Services</a
+            >
+            <a
+              onclick="window.open('https://navneetfoundation.in')"
+              rel="noopener noreferrer"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Support a Child ↗</a
+            >
+            <a
+              onclick="goPage('careers')"
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.88);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+              >Careers</a
+            >
+            <a
+              style="
+                display: block;
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 13px;
+                text-decoration: none;
+                margin-bottom: 10px;
+                cursor: default;
+              "
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div
+          style="
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+          "
+        >
+          <p
+            style="font-size: 12px; color: rgba(255, 255, 255, 0.5); margin: 0"
+          >
+            © 2026 NAVNEET TOPTECH. All Rights Reserved. · A 100% Subsidiary of
+            <span style="color: #0f9bd7; font-weight: 600"
+              >Navneet Education Limited</span
+            >
+          </p>
+
+          <p
+            style="font-size: 12px; color: rgba(255, 255, 255, 0.5); margin: 0"
+          >
+            Mumbai · Bengaluru · Delhi · Chennai · Hyderabad · Nashik
+          </p>
+        </div>
+      </footer>
+    </template>
 <script>
 function goPage(id){ /* standalone preview -- full site navigation lives in the main prototype file */ }
 function toggleFaq(el){el.classList.toggle('open')}

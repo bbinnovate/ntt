@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-<style>
+
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --blue:#0A4B9B; --blue2:#2e3191; --blue3:#3a3eb8;
@@ -65,7 +65,41 @@ nav{background:var(--white);display:flex;align-items:center;justify-content:spac
 .vcat{position:absolute;top:10px;left:10px;background:rgba(245,182,31,.15);color:#f5b61f;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 9px;border-radius:12px;border:1px solid rgba(245,182,31,.3)}
 
 /* ── STATS BAR ── */
-.stats-bar{background:var(--blue);display:grid;grid-template-columns:repeat(4,2fr);border-top:1px solid rgba(255,255,255,.1)}
+     /* ── STATS BAR ── */
+.stats-bar {
+    background: var(--blue);
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+@media (max-width: 768px) {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+
+    .stats-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .stats-bar::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
 .stat-item{padding:22px 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
 .stat-item:last-child{border-right:none}
 .stat-num{font-family:var(--fh);font-size:28px;font-weight:800;color:#f5b61f}
@@ -358,7 +392,7 @@ nav{background:var(--white);display:flex;align-items:center;justify-content:spac
 .conclave-card:hover{box-shadow:0 8px 32px rgba(46,49,145,.1)}
 
 /* ── FOOTER ── */
-footer{background:#0A4B9B;padding:52px 2.5rem 28px}
+footer{background:#0A4B9B;padding:15px 0.8rem 28px}
 .footer-nel-accent{color:#0F9BD7;font-weight:800}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
 .footer-logo-wrap{height:48px;margin-bottom:12px;display:flex;align-items:center}
@@ -381,9 +415,9 @@ footer{background:#0A4B9B;padding:52px 2.5rem 28px}
 /* ── MISC ── */
 .pill-active{background:var(--blue);color:var(--white);display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:4px 12px;border-radius:20px;margin-right:6px;margin-bottom:6px;cursor:pointer;font-family:var(--fh)}
 .pill-inactive{background:var(--light);color:var(--muted);border:1px solid var(--border);display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:4px 12px;border-radius:20px;margin-right:6px;margin-bottom:6px;cursor:pointer;font-family:var(--fh)}
-.divider{height:3px;background:var(--blue),var(--green),transparent);margin:0}
+.divider{height:3px;background:var(--blue),var(--green),transparent;margin:0}
 .section-accent{border-left:4px solid var(--green);padding-left:1rem}
-.highlight-box{background:var(--blue),rgba(27,138,115,.06));border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.highlight-box{background:var(--blue),rgba(27,138,115,.06);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
 .green-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:8px}
 
 /* ── SCHOOL LOGOS STRIP ── */
@@ -593,12 +627,24 @@ footer{background:#0A4B9B;padding:52px 2.5rem 28px}
     <button class="btn-gold" onclick="goPage('contact')">Register Your City</button>
   </div>
 
-  <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Editions</div></div>
-    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Cities</div></div>
-    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Panelists & Workshop Facilitators</div></div>
-    <div class="stat-item"><div class="stat-num">1,00,000+</div><div class="stat-label">Teachers Engaged</div></div>
-  </div>
+   <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">4,000+</div>
+          <div class="stat-label">Partner Schools</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1,00,000+</div>
+          <div class="stat-label">Teachers Trained</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20,00,000+</div>
+          <div class="stat-label">Students Enriched</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Cities</div>
+        </div>
+      </div>
 
   <!-- ABOUT CONCLAVES -->
   <section class="sec sec-white">

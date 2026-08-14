@@ -101,8 +101,22 @@
       .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
       .btn-gold{background:var(--green);color:var(--white);border:none;cursor:pointer;font-family:var(--fh);font-size:14px;font-weight:800;padding:13px 28px;border-radius:8px;transition:opacity .2s}
       .btn-gold:hover{opacity:.9}
+      @media (max-width: 768px){
+  .btn-gold{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+}
       .btn-wh-outline{background:rgba(255,255,255,.12);color:var(--white);cursor:pointer;font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 22px;border-radius:8px;border:1.5px solid rgba(255,255,255,.45);display:flex;align-items:center;gap:8px;transition:background .2s}
       .btn-wh-outline:hover{background:rgba(255,255,255,.2)}
+      @media (max-width: 768px){
+  .btn-wh-outline{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+}
       .play-ring{width:26px;height:26px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
       .play-ring::after{content:'';border-left:9px solid #fff;border-top:5.5px solid transparent;border-bottom:5.5px solid transparent;margin-left:2px}
       .hero-video{background:rgba(255,255,255,.08);border:1.5px dashed rgba(255,255,255,.3);border-radius:16px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer;position:relative;overflow:hidden;transition:background .2s}
@@ -424,11 +438,41 @@
       .pfeat-desc{font-size:12px;color:var(--muted);line-height:1.65}
 
       /* ── ACADEMICS BAND ── */
-      .acad-band{background:var(--blue2);padding:40px 2.5rem}
-      .acad-stat{text-align:center}
-      .acad-num{font-family:var(--fh);font-size:32px;font-weight:800;color:#ffffff}
-      .acad-lbl{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px;font-weight:500}
+      .acad-band {
+  background: var(--blue2);
+  padding: 40px 2.5rem;
+}
 
+.acad-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.acad-stat {
+  text-align: center;
+}
+
+.acad-num {
+  font-family: var(--fh);
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.acad-lbl {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .acad-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+}
       /* ── STAKEHOLDER TABS ── */
       .s-tabs{display:flex;gap:8px;margin-bottom:1.5rem}
       .s-tab{font-size:13px;font-weight:600;font-family:var(--fh);padding:8px 20px;border-radius:8px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .2s}
@@ -495,9 +539,9 @@
       /* ── MISC ── */
       .pill-active{background:var(--blue);color:var(--white);display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:4px 12px;border-radius:20px;margin-right:6px;margin-bottom:6px;cursor:pointer;font-family:var(--fh)}
       .pill-inactive{background:var(--light);color:var(--muted);border:1px solid var(--border);display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:4px 12px;border-radius:20px;margin-right:6px;margin-bottom:6px;cursor:pointer;font-family:var(--fh)}
-      .divider{height:3px;background:var(--blue),var(--green),transparent);margin:0}
+      .divider{height:3px;background:var(--blue),var(--green),transparent;margin:0}
       .section-accent{border-left:4px solid var(--green);padding-left:1rem}
-      .highlight-box{background:var(--blue),rgba(27,138,115,.06));border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+      .highlight-box{background:var(--blue),rgba(27,138,115,.06);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
       .green-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:8px}
 
       /* ── SCHOOL LOGOS STRIP ── */
@@ -1056,7 +1100,7 @@
           <div class="pcard" onclick="goPage('topclass')">
             <div
               class="pcard-top-stripe"
-              style="background:var(--green),var(--teal))"
+              style="background:var(--green),var(--teal)"
             ></div>
             <div
               style="
@@ -1088,7 +1132,7 @@
           <div class="pcard" onclick="goPage('topassess')">
             <div
               class="pcard-top-stripe"
-              style="background:var(--green),var(--green2))"
+              style="background:var(--green),var(--green2)"
             ></div>
             <div
               style="
@@ -1120,7 +1164,7 @@
           <div class="pcard">
             <div
               class="pcard-top-stripe"
-              style="background:var(--blue),var(--teal))"
+              style="background:var(--blue),var(--teal)"
             ></div>
             <div
               style="
@@ -1157,7 +1201,7 @@
           <div class="pcard">
             <div
               class="pcard-top-stripe"
-              style="background:var(--green))"
+              style="background:var(--green)"
             ></div>
             <div
               style="
@@ -1194,7 +1238,7 @@
           <div class="pcard">
             <div
               class="pcard-top-stripe"
-              style="background:var(--blue),var(--teal))"
+              style="background:var(--blue),var(--teal)"
             ></div>
             <div
               style="
@@ -2831,7 +2875,7 @@
 
       <!-- WHO WE ARE — NTT STORY -->
       <section class="sec sec-white">
-        <div class="g2" style="gap: 3.5rem; align-items: center">
+       <div class="g2" style="gap: clamp(1rem, 1rem, 3.5rem); align-items: center">
           <div>
             <p class="sec-tag">Who We Are</p>
             <h2 class="sec-title">Built on 65+ Years of Educational Trust.</h2>
@@ -2929,13 +2973,13 @@
                 </div>
               </div>
             </div>
-            <button
-              class="btn-outline-blue"
-              onclick="goPage('contact')"
-              style="margin-top: 1rem"
-            >
-              Talk to Us →
-            </button>
+           <button
+  class="btn-outline-blue"
+  onclick="goPage('contact')"
+  style="margin-top: 1rem; display: none"
+>
+  Talk to Us →
+</button>
           </div>
           <div style="width: 100%">
             <div
@@ -2989,26 +3033,34 @@
               </div>
             </div>
           </div>
+          
         </div>
+         <button
+              class="btn-outline-blue"
+              onclick="goPage('contact')"
+              style="margin-top: 1rem"
+            >
+              Talk to Us →
+            </button>
       </section>
 
       <!-- IMPACT BAR -->
-      <div class="impact-bar">
-        <div class="impact-item">
-          <div class="impact-num">4,000+</div>
-          <div class="impact-lbl">Partner Schools</div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">4,000+</div>
+          <div class="stat-label">Partner Schools</div>
         </div>
-        <div class="impact-item">
-          <div class="impact-num">1,00,000+</div>
-          <div class="impact-lbl">Teachers Trained</div>
+        <div class="stat-item">
+          <div class="stat-num">1,00,000+</div>
+          <div class="stat-label">Teachers Trained</div>
         </div>
-        <div class="impact-item">
-          <div class="impact-num">20,00,000+</div>
-          <div class="impact-lbl">Students Enriched</div>
+        <div class="stat-item">
+          <div class="stat-num">20,00,000+</div>
+          <div class="stat-label">Students Enriched</div>
         </div>
-        <div class="impact-item">
-          <div class="impact-num">30+</div>
-          <div class="impact-lbl">Cities</div>
+        <div class="stat-item">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Cities</div>
         </div>
       </div>
 
@@ -3074,15 +3126,14 @@
             </p>
           </div>
         </div>
-        <div
+        <div  class="grid grid-cols-2 md:grid-cols-3 " 
           style="
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+          
             gap: 1rem;
             margin-top: 1.5rem;
           "
         >
-          <div class="fcard">
+         <div class="fcard col-span-2 md:col-span-1">
             <div class="fcard-icon">⭐</div>
             <div class="fcard-name">Excellence</div>
             <div class="fcard-desc">
@@ -3831,24 +3882,27 @@
             every lesson meets board standards and pedagogical best practices.
           </p>
         </div>
-        <div class="g4">
-          <div class="acad-stat">
-            <div class="acad-num">120+</div>
-            <div class="acad-lbl">Authors & Writers</div>
-          </div>
-          <div class="acad-stat">
-            <div class="acad-num">80+</div>
-            <div class="acad-lbl">Subject Matter Experts</div>
-          </div>
-          <div class="acad-stat">
-            <div class="acad-num">60+</div>
-            <div class="acad-lbl">Animators & Designers</div>
-          </div>
-          <div class="acad-stat">
-            <div class="acad-num">40+</div>
-            <div class="acad-lbl">Editors & Reviewers</div>
-          </div>
-        </div>
+        <div class="acad-stats">
+  <div class="acad-stat">
+    <div class="acad-num">120+</div>
+    <div class="acad-lbl">Authors & Writers</div>
+  </div>
+
+  <div class="acad-stat">
+    <div class="acad-num">80+</div>
+    <div class="acad-lbl">Subject Matter Experts</div>
+  </div>
+
+  <div class="acad-stat">
+    <div class="acad-num">60+</div>
+    <div class="acad-lbl">Animators & Designers</div>
+  </div>
+
+  <div class="acad-stat">
+    <div class="acad-num">40+</div>
+    <div class="acad-lbl">Editors & Reviewers</div>
+  </div>
+</div>
       </div>
 
       <!-- NAVNEET EDUCATION LIMITED — BOTTOM -->
